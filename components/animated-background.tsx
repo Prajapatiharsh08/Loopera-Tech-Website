@@ -2,116 +2,56 @@
 
 export default function AnimatedBackground() {
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none bg-gradient-to-br from-white to-gray-100">
-      {/* Background video with subtle overlay */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover opacity-20"
-        autoPlay
-        muted
-        loop
-        playsInline
-        style={{ backgroundBlendMode: 'overlay' }}
-      >
-        <source src="/generated_video.mp4" type="video/mp4" />
-      </video>
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* Large floating gradient orbs - changed to blue and neon blue colors */}
+      <div className="absolute top-16 left-16 w-96 h-96 rounded-full bg-gradient-to-br from-blue-500/35 to-cyan-400/25 blur-3xl animate-float-slow"></div>
 
-      {/* Subtle gradient overlay for smooth blending */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-gray-50/30 via-blue-50/20 to-transparent animate-gradient opacity-50"></div>
-
-      {/* Floating geometric shapes with glow effect */}
-      <div className="absolute top-10 left-20 w-28 h-28 opacity-40">
-        <svg viewBox="0 0 100 100" className="w-full h-full animate-spin-slow filter drop-shadow-md">
-          <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="3" className="text-gray-600" />
-        </svg>
-      </div>
-
-      <div className="absolute bottom-20 right-40 w-20 h-20 opacity-40">
-        <svg viewBox="0 0 100 100" className="w-full h-full animate-pulse filter drop-shadow-md" style={{ animationDelay: "1.5s" }}>
-          <rect x="20" y="20" width="60" height="60" fill="none" stroke="currentColor" strokeWidth="3" className="text-blue-500" />
-        </svg>
-      </div>
-
-      <div className="absolute top-1/3 left-1/4 w-24 h-24 opacity-40">
-        <svg viewBox="0 0 100 100" className="w-full h-full animate-float-smooth filter drop-shadow-md" style={{ animationDelay: "3s" }}>
-          <polygon points="50,10 90,90 10,90" fill="none" stroke="currentColor" strokeWidth="3" className="text-gray-500" />
-        </svg>
-      </div>
-
-      {/* Enhanced floating particles with glow */}
       <div
-        className="absolute top-1/4 right-1/3 w-6 h-6 bg-blue-200/40 rounded-full animate-float-smooth filter drop-shadow-sm"
-        style={{ animationDelay: "1s" }}
+        className="absolute top-32 right-24 w-[28rem] h-[28rem] rounded-full bg-gradient-to-br from-[#00BFFF]/45 to-blue-400/35 blur-3xl animate-float-slow"
+        style={{ animationDelay: "3s" }}
       ></div>
+
       <div
-        className="absolute bottom-1/3 left-1/5 w-5 h-5 bg-gray-300/40 rounded-full animate-float-smooth filter drop-shadow-sm"
-        style={{ animationDelay: "2.5s" }}
+        className="absolute bottom-24 left-1/4 w-80 h-80 rounded-full bg-gradient-to-br from-blue-600/30 to-[#1E90FF]/20 blur-3xl animate-float-slow"
+        style={{ animationDelay: "6s" }}
       ></div>
+
       <div
-        className="absolute top-1/2 right-1/6 w-7 h-7 bg-blue-300/30 rounded-full animate-float-smooth filter drop-shadow-sm"
+        className="absolute bottom-16 right-16 w-72 h-72 rounded-full bg-gradient-to-br from-cyan-500/40 to-blue-400/30 blur-3xl animate-float-slow"
+        style={{ animationDelay: "9s" }}
+      ></div>
+
+      {/* Medium floating orbs with blue colors */}
+      <div
+        className="absolute top-1/3 right-1/4 w-40 h-40 rounded-full bg-gradient-to-br from-blue-400/45 to-cyan-300/35 blur-2xl animate-float"
+        style={{ animationDelay: "2s" }}
+      ></div>
+
+      <div
+        className="absolute bottom-1/3 left-1/3 w-48 h-48 rounded-full bg-gradient-to-br from-[#00BFFF]/50 to-blue-300/40 blur-2xl animate-float"
+        style={{ animationDelay: "5s" }}
+      ></div>
+
+      {/* Small accent orbs with neon blue variations */}
+      <div
+        className="absolute top-1/2 left-1/6 w-24 h-24 rounded-full bg-gradient-to-br from-blue-300/55 to-cyan-200/45 blur-xl animate-float"
+        style={{ animationDelay: "7s" }}
+      ></div>
+
+      <div
+        className="absolute top-3/4 right-1/3 w-28 h-28 rounded-full bg-gradient-to-br from-[#1E90FF]/60 to-blue-200/50 blur-xl animate-float"
         style={{ animationDelay: "4s" }}
       ></div>
 
-      {/* CSS for animations */}
-      <style jsx>{`
-        @keyframes gradient {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
-        }
-        @keyframes spin-slow {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(360deg);
-          }
-        }
-        @keyframes pulse {
-          0%, 100% {
-            transform: scale(1);
-            opacity: 0.4;
-          }
-          50% {
-            transform: scale(1.3);
-            opacity: 0.6;
-          }
-        }
-        @keyframes float-smooth {
-          0%, 100% {
-            transform: translateY(0);
-            opacity: 0.5;
-          }
-          50% {
-            transform: translateY(-30px);
-            opacity: 0.7;
-          }
-        }
-        .animate-gradient {
-          animation: gradient 12s ease infinite;
-          background-size: 200% 200%;
-        }
-        .animate-spin-slow {
-          animation: spin-slow 18s linear infinite;
-        }
-        .animate-pulse {
-          animation: pulse 5s ease-in-out infinite;
-        }
-        .animate-float-smooth {
-          animation: float-smooth 7s ease-in-out infinite;
-        }
-        .filter.drop-shadow-md {
-          filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
-        }
-        .filter.drop-shadow-sm {
-          filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.15));
-        }
-      `}</style>
+      <div
+        className="absolute top-1/4 left-1/2 w-32 h-32 rounded-full bg-gradient-to-br from-cyan-400/40 to-blue-300/30 blur-2xl animate-float"
+        style={{ animationDelay: "8s" }}
+      ></div>
+
+      <div
+        className="absolute bottom-1/2 right-1/6 w-36 h-36 rounded-full bg-gradient-to-br from-[#00BFFF]/35 to-cyan-400/25 blur-2xl animate-float"
+        style={{ animationDelay: "1s" }}
+      ></div>
     </div>
   )
 }
