@@ -57,8 +57,8 @@ const projectsData = {
       'End-to-end encryption for applicant data',
       '24/7 counseling and AI-driven support tools'
     ],
-    image: '/ready-for-udaan-global-opportunities.jpg',
-    liveUrl: 'https://ready-for-udaan-demo.loopera.tech',
+    image: '/ready-for-udaan-global-opportunities.png',
+    liveUrl: 'https://ready4udaan.netlify.app/',
     year: '2025',
     duration: '6 months',
     client: 'Ready For Udaan Pvt. Ltd.',
@@ -113,8 +113,8 @@ const projectsData = {
       'Implemented enterprise-grade data encryption',
       'Launched AI-powered guidance chatbot for 24/7 support'
     ],
-    image: '/flourish-alliance-education-consulting.jpg',
-    liveUrl: 'https://flourish-alliance-demo.loopera.tech',
+    image: '/flourish-alliance-education-consulting.png',
+    liveUrl: 'https://flourishalliance25.netlify.app/',
     year: '2025',
     duration: '5 months',
     client: 'Flourish Alliance Pvt. Ltd.',
@@ -291,6 +291,7 @@ export default function CaseStudyPage ({
                 <Link
                   href={project.liveUrl}
                   className='inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium'
+                  target='_blank'
                 >
                   <ExternalLink className='w-4 h-4 mr-2' />
                   View Live Demo

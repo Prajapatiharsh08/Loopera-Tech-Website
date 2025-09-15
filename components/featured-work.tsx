@@ -15,38 +15,45 @@ import { motion } from 'framer-motion'
 
 const projects = [
   {
-    title: 'AI-Powered E-commerce Platform',
+    title: 'Ready For Udaan - Global Education & Work Permit Platform',
     description:
-      'Built a smart recommendation engine that increased conversion rates by 40% for a retail client.',
-    image: '/modern-ecommerce-dashboard-with-ai-recommendations.jpg',
-    tags: ['React', 'AI/ML', 'Node.js', 'MongoDB'],
-    client: 'Fashion Forward Co.',
-    industry: 'E-commerce',
+      'Developed a consulting platform that streamlined study visa and work permit processes, helping 500+ students and professionals pursue opportunities abroad.',
+    image: '/ready-for-udaan-global-opportunities.png',
+    tags: ['React.js', 'Node.js', 'MongoDB', 'TailwindCSS', 'PostgreSQL'],
+    client: 'Ready For Udaan Pvt. Ltd.',
+    industry: 'Education & Immigration',
     results: {
-      conversion: '40% increase in conversion rates',
-      revenue: '150% boost in online revenue',
-      engagement: '65% higher user engagement'
+      approvals: '85% visa & work permit success rate',
+      processing: '40% faster application processing',
+      satisfaction: '97% client satisfaction rate'
     },
     duration: '6 months',
-    teamSize: '5 developers',
-    caseStudyUrl: '/portfolio/retailai-suite'
+    teamSize: '6 consultants & developers',
+    caseStudyUrl: '/portfolio/ready-for-udaan'
   },
   {
-    title: 'Healthcare Management System',
+    title: 'Flourish Alliance - Overseas Education & Work Permit Services',
     description:
-      'Developed a comprehensive patient management system with automated scheduling and AI diagnostics.',
-    image: '/healthcare-dashboard-with-patient-management-inter.jpg',
-    tags: ['Next.js', 'PostgreSQL', 'TailwindCSS'],
-    client: 'MedTech Solutions',
-    industry: 'Healthcare',
+      'End-to-end overseas consulting platform helping students and professionals with study visas, work permits, and career opportunities abroad.',
+    image: '/flourish-alliance-education-consulting.png',
+    tags: [
+      'React.js',
+      'JavaScript',
+      'MongoDB',
+      'TailwindCSS',
+      'PostgreSQL',
+      'Framer Motion'
+    ],
+    client: 'Flourish Alliance Pvt. Ltd.',
+    industry: 'Education & Immigration',
     results: {
-      efficiency: '40% increase in patient processing',
-      satisfaction: '95% patient satisfaction rate',
-      time: '60% reduction in admin tasks'
+      approvals: '500+ successful visa & work permit approvals',
+      satisfaction: '96% client satisfaction rate',
+      processing: '40% faster document processing'
     },
-    duration: '4 months',
-    teamSize: '6 developers',
-    caseStudyUrl: '/portfolio/healthcare-pro'
+    duration: '5 months',
+    teamSize: '5 developers',
+    caseStudyUrl: '/portfolio/flourish-alliance'
   },
   {
     title: 'Real Estate CRM with AI',

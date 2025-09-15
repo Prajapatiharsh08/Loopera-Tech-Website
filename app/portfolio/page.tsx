@@ -32,8 +32,8 @@ export default function PortfolioPage () {
         satisfaction: '97% client satisfaction rate',
         approvals: '85% success rate in visa & work permit approvals'
       },
-      image: '/ready-for-udaan-global-opportunities.jpg',
-      liveUrl: '#',
+      image: '/ready-for-udaan-global-opportunities.png',
+      liveUrl: 'https://ready4udaan.netlify.app/',
       caseStudyUrl: '/portfolio/ready-for-udaan',
       year: '2025',
       duration: '6 months',
@@ -66,8 +66,8 @@ export default function PortfolioPage () {
         satisfaction: '96% client satisfaction rate',
         processing: '40% faster document processing'
       },
-      image: '/flourish-alliance-education-consulting.jpg',
-      liveUrl: '#',
+      image: '/flourish-alliance-education-consulting.png',
+      liveUrl: 'https://flourishalliance25.netlify.app/',
       caseStudyUrl: '/portfolio/flourish-alliance',
       year: '2025',
       duration: '5 months',
@@ -242,6 +242,7 @@ export default function PortfolioPage () {
                   <Link
                     href={projects[0].liveUrl}
                     className='inline-flex items-center border border-gray-300 hover:bg-gray-50 text-gray-700 px-6 py-3 rounded-lg font-medium'
+                    target='_blank'
                   >
                     <ExternalLink className='w-4 h-4 mr-2' />
                     Live Demo
@@ -314,6 +315,7 @@ export default function PortfolioPage () {
                     <Link
                       href={project.liveUrl}
                       className='flex items-center justify-center border border-gray-300 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg text-sm'
+                      target='_blank'
                     >
                       <ExternalLink className='w-4 h-4' />
                     </Link>
