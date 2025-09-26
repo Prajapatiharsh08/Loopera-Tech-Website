@@ -5,15 +5,11 @@ export async function POST(req: Request) {
   try {
     const { url, path, referrer, userAgent, timestamp } = await req.json();
 
-    // Validate payload
     if (!url || !path) {
-      return NextResponse.json(
-        { success: false, error: "missing payload" },
-        { status: 400 }
-      );
+      return NextResponse.json({ success: false, error: "missing payload" }, { status: 400 });
     }
 
-    // Load environment variables
+    // Load environment variables from Vercel
     const SMTP_HOST = process.env.SMTP_HOST;
     const SMTP_PORT = Number(process.env.SMTP_PORT || 587);
     const SMTP_SECURE = process.env.SMTP_SECURE === "true";
@@ -22,10 +18,7 @@ export async function POST(req: Request) {
     const RECEIVER_EMAIL = process.env.RECEIVER_EMAIL || SMTP_USER;
 
     if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS) {
-      return NextResponse.json(
-        { success: false, error: "SMTP environment variables missing" },
-        { status: 500 }
-      );
+      return NextResponse.json({ success: false, error: "SMTP environment variables missing" }, { status: 500 });
     }
 
     // Create transporter
@@ -36,16 +29,12 @@ export async function POST(req: Request) {
       auth: { user: SMTP_USER, pass: SMTP_PASS },
     });
 
-    // Verify connection (optional)
-    await transporter.verify().catch(err => {
-      console.error("SMTP connection failed:", err);
-      throw err;
-    });
+    // Optional: log for debugging
+    console.log("Sending email to:", RECEIVER_EMAIL);
 
-    // Convert timestamp to string
+    // Ensure timestamp is string
     const timeString = timestamp ? String(timestamp) : new Date().toISOString();
 
-    // Send email
     await transporter.sendMail({
       from: `"Website Tracker" <${SMTP_USER}>`,
       to: RECEIVER_EMAIL,
@@ -63,9 +52,6 @@ export async function POST(req: Request) {
     return NextResponse.json({ success: true });
   } catch (error: any) {
     console.error("Error sending email:", error);
-    return NextResponse.json(
-      { success: false, error: String(error?.message ?? error) },
-      { status: 500 }
-    );
+    return NextResponse.json({ success: false, error: String(error?.message ?? error) }, { status: 500 });
   }
 }

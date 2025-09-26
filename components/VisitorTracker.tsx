@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 
 export default function VisitorTracker() {
   useEffect(() => {
-    // Dedupe: only send once per hour
+    // Only send once per hour
     if (document.cookie.includes('loopera_visited=1')) return
 
     const sendVisit = async () => {
