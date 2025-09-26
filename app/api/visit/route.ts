@@ -1,4 +1,3 @@
-// app/api/visit/route.ts
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
@@ -8,13 +7,10 @@ export async function POST(req: Request) {
 
     // Validate payload
     if (!url || !path) {
-      return NextResponse.json(
-        { success: false, error: "missing payload" },
-        { status: 400 }
-      );
+      return NextResponse.json({ success: false, error: "missing payload" }, { status: 400 });
     }
 
-    // Ensure env vars are loaded
+    // Load environment variables
     const SMTP_HOST = process.env.SMTP_HOST;
     const SMTP_PORT = Number(process.env.SMTP_PORT || 587);
     const SMTP_SECURE = process.env.SMTP_SECURE === "true";
@@ -23,10 +19,7 @@ export async function POST(req: Request) {
     const RECEIVER_EMAIL = process.env.RECEIVER_EMAIL || SMTP_USER;
 
     if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS) {
-      return NextResponse.json(
-        { success: false, error: "SMTP environment variables missing" },
-        { status: 500 }
-      );
+      return NextResponse.json({ success: false, error: "SMTP environment variables missing" }, { status: 500 });
     }
 
     // Create transporter
@@ -34,19 +27,16 @@ export async function POST(req: Request) {
       host: SMTP_HOST,
       port: SMTP_PORT,
       secure: SMTP_SECURE,
-      auth: {
-        user: SMTP_USER,
-        pass: SMTP_PASS,
-      },
+      auth: { user: SMTP_USER, pass: SMTP_PASS },
     });
 
-    // Verify connection (optional, helps debug)
-    await transporter.verify().catch((err) => {
+    // Verify connection (optional)
+    await transporter.verify().catch(err => {
       console.error("SMTP connection failed:", err);
       throw err;
     });
 
-    // Ensure timestamp is always string
+    // Convert timestamp to string
     const timeString = timestamp ? String(timestamp) : new Date().toISOString();
 
     // Send email
@@ -67,9 +57,6 @@ export async function POST(req: Request) {
     return NextResponse.json({ success: true });
   } catch (error: any) {
     console.error("Error sending email:", error);
-    return NextResponse.json(
-      { success: false, error: String(error?.message ?? error) },
-      { status: 500 }
-    );
+    return NextResponse.json({ success: false, error: String(error?.message ?? error) }, { status: 500 });
   }
 }

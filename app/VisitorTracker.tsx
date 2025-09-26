@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 
 export default function VisitorTracker() {
   useEffect(() => {
+    // Dedupe: send only once per hour
     if (document.cookie.includes('loopera_visited=1')) return
 
     const sendVisit = async () => {
@@ -20,6 +21,11 @@ export default function VisitorTracker() {
           })
         })
 
+        if (!response.ok) {
+          console.error('VisitorTracker: non-200 response', response.status, response.statusText)
+          return
+        }
+
         const data = await response.json()
         if (!data.success) console.error('VisitorTracker failed:', data.error)
         else console.log('VisitorTracker: visit logged successfully')
@@ -30,6 +36,7 @@ export default function VisitorTracker() {
 
     sendVisit()
 
+    // Set cookie for 1 hour
     document.cookie = 'loopera_visited=1; path=/; max-age=3600; SameSite=Lax'
   }, [])
 
