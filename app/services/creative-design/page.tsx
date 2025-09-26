@@ -14,7 +14,7 @@ export default function CreativeDesignPage() {
         <div className="max-w-6xl mx-auto">
           <Link
             href="/services"
-            className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8 transition-colors"
+            className="inline-flex items-center text-[#1E90FF] hover:text-[#1E90FF] mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Services
@@ -22,7 +22,7 @@ export default function CreativeDesignPage() {
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center bg-pink-50 text-pink-600 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <div className="inline-flex items-center bg-blue-50 text-[#1E90FF] px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Palette className="w-4 h-4 mr-2" />
                 Creative Designing
               </div>
@@ -33,13 +33,13 @@ export default function CreativeDesignPage() {
                 We don't just design pretty interfaces — we design experiences that convert. From brand identity to
                 UI/UX for your website or app, our design-first approach keeps both humans and algorithms happy.
               </p>
-              <Button className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-3 text-lg">
+              <Button className="bg-blue-600 hover:bg-[#1E90FF] cursor-pointer text-white px-8 py-3 text-lg">
                 Start Design Project
               </Button>
             </div>
             <div className="relative">
-              <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl p-8 h-96 flex items-center justify-center">
-                <Palette className="w-32 h-32 text-pink-600" />
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 h-96 flex items-center justify-center">
+                <Palette className="w-32 h-32 text-[#1E90FF]" />
               </div>
             </div>
           </div>
@@ -53,28 +53,28 @@ export default function CreativeDesignPage() {
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                icon: <Sparkles className="w-8 h-8 text-pink-600" />,
+                icon: <Sparkles className="w-8 h-8 text-[#1E90FF]" />,
                 title: "Brand & Logo Design",
                 desc: "Complete brand identity including logo, color palette, typography, and brand guidelines that make you memorable.",
               },
               {
-                icon: <Eye className="w-8 h-8 text-pink-600" />,
+                icon: <Eye className="w-8 h-8 text-[#1E90FF]" />,
                 title: "UI/UX for Web & Mobile",
                 desc: "User-centered design that focuses on conversion, engagement, and seamless user experiences across all devices.",
               },
               {
-                icon: <Layers className="w-8 h-8 text-pink-600" />,
+                icon: <Layers className="w-8 h-8 text-[#1E90FF]" />,
                 title: "Motion Graphics & AI Visuals",
                 desc: "Animated graphics, micro-interactions, and AI-generated visuals that bring your brand to life.",
               },
               {
-                icon: <Palette className="w-8 h-8 text-pink-600" />,
+                icon: <Palette className="w-8 h-8 text-[#1E90FF]" />,
                 title: "Design Systems + Prototyping",
                 desc: "Comprehensive design systems and interactive prototypes that ensure consistency and streamline development.",
               },
             ].map((service, index) => (
               <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                <div className="bg-pink-50 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <div className="bg-blue-50 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                   {service.icon}
                 </div>
                 <h3 className="font-semibold text-lg mb-3">{service.title}</h3>
@@ -113,7 +113,7 @@ export default function CreativeDesignPage() {
               },
             ].map((process, index) => (
               <div key={index} className="text-center">
-                <div className="bg-pink-100 text-pink-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold">
+                <div className="bg-blue-100 text-[#1E90FF] w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold">
                   {process.step}
                 </div>
                 <h3 className="font-semibold text-lg mb-3">{process.title}</h3>
@@ -174,7 +174,7 @@ export default function CreativeDesignPage() {
                 <ul className="space-y-2">
                   {designType.deliverables.map((item, idx) => (
                     <li key={idx} className="flex items-center text-sm text-gray-600">
-                      <div className="w-2 h-2 bg-pink-500 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-[#1E90FF] rounded-full mr-3"></div>
                       {item}
                     </li>
                   ))}
@@ -234,12 +234,12 @@ export default function CreativeDesignPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/consultation">
-              <Button className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-3">Start Design Project</Button>
+              <Button className="bg-[#1E90FF] hover:bg-[#1E90FF] cursor-pointer text-white px-8 py-3">Start Design Project</Button>
             </Link>
             <Link href="/portfolio">
               <Button
                 variant="outline"
-                className="border-pink-600 text-pink-600 hover:bg-pink-50 px-8 py-3 bg-transparent"
+                className="border-[#1E90FF] text-[#1E90FF] hover:text-[#1E90FF] cursor-pointer px-8 py-3 bg-transparent"
               >
                 View Design Portfolio
               </Button>

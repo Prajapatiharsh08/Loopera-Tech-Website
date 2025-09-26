@@ -1,6 +1,6 @@
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
-import { ArrowLeft, Bot, Brain, Cog, Zap } from "lucide-react"
+import { ArrowLeft, Briefcase, DollarSign, GraduationCap, Factory, Bot, Brain, Cog, Zap } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
@@ -22,24 +22,25 @@ export default function AIAutomationPage() {
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center bg-purple-50 text-purple-600 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <div className="inline-flex items-center bg-[purple-50] text-[#1E90FF] px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Brain className="w-4 h-4 mr-2" />
-                AI Automation
+                AI Services
               </div>
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 text-balance">
-                Let AI Do the Heavy Lifting
+                AI Services for Cross-Industry Solutions
               </h1>
               <p className="text-xl text-gray-600 mb-8 text-pretty">
-                We integrate AI tools like OpenAI, Langchain, Make, and Zapier into your business processes — automating
-                responses, document generation, scheduling, and more. Save time, reduce errors, and boost efficiency.
+                This document outlines the AI-based services your company can provide across industries, including small
+                businesses, real estate, colleges, and industries. These services can be showcased on your website and
+                implemented offline for maximum profitability.
               </p>
-              <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 text-lg">
-                Automate Your Business
+              <Button className="bg-[#1E90FF] hover:bg-[#3c9dff] text-white cursor-pointer px-8 py-3 text-lg">
+                Explore Our Solutions
               </Button>
             </div>
             <div className="relative">
               <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 h-96 flex items-center justify-center">
-                <Bot className="w-32 h-32 text-purple-600" />
+                <Bot className="w-32 h-32 text-[#1E90FF]" />
               </div>
             </div>
           </div>
@@ -49,29 +50,61 @@ export default function AIAutomationPage() {
       {/* Use Cases Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">AI Automation Use Cases</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Our AI Solutions by Industry</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                title: "Automated Customer Support",
-                desc: "AI chatbots that handle customer inquiries 24/7 with human-like responses",
+                icon: <Briefcase className="w-6 h-6 text-[#1E90FF]" />,
+                title: "Small Businesses (Shops, Startups, SMEs)",
+                items: [
+                  "AI Chatbot Integration (24/7 customer support, WhatsApp/website chatbot)",
+                  "Smart Inventory Management (stock alerts, demand prediction)",
+                  "Billing & Accounting AI tools (GST-ready invoices, expense tracker)",
+                  "AI Digital Marketing (ads optimization, social media post generator)",
+                ],
               },
               {
-                title: "Lead Qualification via Chatbots",
-                desc: "Intelligent bots that qualify leads and route them to the right sales team",
+                icon: <Zap className="w-6 h-6 text-[#1E90FF]" />,
+                title: "Real Estate",
+                items: [
+                  "Property Recommendation System (AI-based search & filter for buyers)",
+                  "Virtual Tours (AI + VR)",
+                  "Lead Scoring AI (filter best potential buyers)",
+                  "Price Prediction Tool (market analysis, resale value prediction)",
+                ],
               },
               {
-                title: "Internal Tools Powered by LLMs",
-                desc: "Custom AI tools for document processing, data analysis, and reporting",
+                icon: <GraduationCap className="w-6 h-6 text-[#1E90FF]" />,
+                title: "Colleges / Education",
+                items: [
+                  "AI Learning Management System (personalized learning, student analytics)",
+                  "AI Exam Monitoring / Proctoring",
+                  "Automated Attendance & Reports",
+                  "Career Counseling AI (skill-based career suggestions)",
+                ],
               },
               {
-                title: "AI-Generated Content Workflows",
-                desc: "Automated content creation for marketing, social media, and documentation",
+                icon: <Factory className="w-6 h-6 text-[#1E90FF]" />,
+                title: "Industries (Manufacturing / Services)",
+                items: [
+                  "Predictive Maintenance (AI alerts for machine failures)",
+                  "AI Quality Control (defect detection with Vision AI)",
+                  "Process Automation (RPA + AI for tasks)",
+                ],
               },
-            ].map((useCase, index) => (
+            ].map((category, index) => (
               <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="font-semibold text-lg mb-3">{useCase.title}</h3>
-                <p className="text-gray-600">{useCase.desc}</p>
+                <div className="flex items-center mb-4">
+                  <div className="bg-purple-50 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                    {category.icon}
+                  </div>
+                  <h3 className="font-semibold text-xl">{category.title}</h3>
+                </div>
+                <ul className="list-disc pl-5 text-gray-600 space-y-2">
+                  {category.items.map((item, itemIndex) => (
+                    <li key={itemIndex}>{item}</li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
@@ -81,28 +114,51 @@ export default function AIAutomationPage() {
       {/* Tools & Technologies */}
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">AI Tools We Work With</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <h2 className="text-3xl font-bold text-center mb-12">General & Offline Services</h2>
+          <div className="grid md:grid-cols-2 gap-8">
             {[
-              { name: "OpenAI", desc: "GPT models & APIs" },
-              { name: "Langchain", desc: "LLM frameworks" },
-              { name: "Make", desc: "Visual automation" },
-              { name: "Zapier", desc: "App integrations" },
-            ].map((tool, index) => (
-              <div key={index} className="text-center">
-                <div className="bg-purple-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Cog className="w-8 h-8 text-purple-600" />
+              {
+                icon: <Cog className="w-6 h-6 text-[#1E90FF]" />,
+                title: "General / Cross-Industry",
+                items: [
+                  "AI Data Analytics Dashboard (business insights, reports)",
+                  "Voice AI Solutions (voice commands, IVR systems)",
+                  "AI Document Processing (OCR, invoice automation, contract analysis)",
+                  "AI Security Solutions (CCTV anomaly detection, fraud detection)",
+                ],
+              },
+              {
+                icon: <DollarSign className="w-6 h-6 text-[#1E90FF]" />,
+                title: "Offline Services (Profit Model)",
+                items: [
+                  "Consulting Fees – AI solution planning",
+                  "Implementation Fees – System setup, chatbot installation, dashboards",
+                  "Subscription Model – Monthly maintenance charges",
+                  "Training Workshops – AI workshops & training for colleges/industries",
+                  "Customized Projects – Tailor-made solutions for premium clients",
+                ],
+              },
+            ].map((category, index) => (
+              <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex items-center mb-4">
+                  <div className="bg-purple-50 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                    {category.icon}
+                  </div>
+                  <h3 className="font-semibold text-xl">{category.title}</h3>
                 </div>
-                <h3 className="font-semibold text-lg mb-2">{tool.name}</h3>
-                <p className="text-gray-600">{tool.desc}</p>
+                <ul className="list-disc pl-5 text-gray-600 space-y-2">
+                  {category.items.map((item, itemIndex) => (
+                    <li key={itemIndex}>{item}</li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-16 bg-gradient-to-r from-purple-50 to-blue-50">
+      {/* Benefits Section - Removed as per new content, keeping the structure for future use if needed */}
+      {/* <section className="py-16 bg-gradient-to-r from-purple-50 to-blue-50">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Why Choose AI Automation?</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -133,27 +189,25 @@ export default function AIAutomationPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-16">
         <div className="max-w-4xl mx-auto text-center px-4">
-          <h2 className="text-3xl font-bold mb-6">Ready to Automate Your Business?</h2>
+          <h2 className="text-3xl font-bold mb-6">Ready to Explore Our AI Services?</h2>
           <p className="text-xl text-gray-600 mb-8">
-            Let's identify the processes that can be automated and build intelligent solutions for your business.
+            Let's discuss how our cross-industry AI solutions can benefit your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/consultation">
-              <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3">
-                Start Automation Project
-              </Button>
+            <Link href="/contact">
+              <Button className="bg-[#1E90FF] hover:bg-purple-700 text-white px-8 py-3">Get a Consultation</Button>
             </Link>
             <Link href="/portfolio">
               <Button
                 variant="outline"
-                className="border-purple-600 text-purple-600 hover:bg-purple-50 px-8 py-3 bg-transparent"
+                className="border-[#1E90FF] text-[#1E90FF] hover:text-[#1E90FF] px-8 py-3 bg-transparent"
               >
-                See AI Examples
+                View Case Studies
               </Button>
             </Link>
           </div>

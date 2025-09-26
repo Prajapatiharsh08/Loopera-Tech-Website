@@ -15,7 +15,7 @@ import { motion } from 'framer-motion'
 
 const projects = [
   {
-    title: 'Ready For Udaan - Global Education & Work Permit Platform',
+    title: 'Ready For Udaan',
     description:
       'Developed a consulting platform that streamlined study visa and work permit processes, helping 500+ students and professionals pursue opportunities abroad.',
     image: '/ready-for-udaan-global-opportunities.png',
@@ -32,7 +32,7 @@ const projects = [
     caseStudyUrl: '/portfolio/ready-for-udaan'
   },
   {
-    title: 'Flourish Alliance - Overseas Education & Work Permit Services',
+    title: 'Flourish Alliance',
     description:
       'End-to-end overseas consulting platform helping students and professionals with study visas, work permits, and career opportunities abroad.',
     image: '/flourish-alliance-education-consulting.png',
@@ -119,11 +119,11 @@ export default function FeaturedWork () {
                 <h3 className='text-xl font-semibold text-gray-900 mb-3 group-hover:text-[#1E90FF] transition-colors'>
                   {project.title}
                 </h3>
-                <p className='text-gray-600 mb-4 leading-relaxed'>
+                <p className='text-gray-600 leading-relaxed'>
                   {project.description}
                 </p>
 
-                <div className='mb-4'>
+                {/* <div className='mb-4'>
                   <h4 className='font-semibold text-sm text-gray-900 mb-2'>
                     Key Results:
                   </h4>
@@ -140,9 +140,9 @@ export default function FeaturedWork () {
                         </div>
                       ))}
                   </div>
-                </div>
+                </div> */}
 
-                <div className='flex flex-wrap gap-2'>
+                {/* <div className='flex flex-wrap gap-2'>
                   {project.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
@@ -151,7 +151,7 @@ export default function FeaturedWork () {
                       {tag}
                     </span>
                   ))}
-                </div>
+                </div> */}
 
                 {/* <Link href={project.caseStudyUrl}>
                   <Button
@@ -169,27 +169,18 @@ export default function FeaturedWork () {
 
         <div className='text-center'>
           <Link href='/portfolio'>
-            <motion.div
-              whileHover={{ scale: 1.05, rotate: 1 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            <Button
+              size='lg'
+              className='bg-gradient-to-r from-[#1E90FF] to-[#6FBFFF] 
+               hover:from-[#1E90FF]/90 hover:to-[#6FBFFF]/90 
+               text-white px-8 py-4 rounded-full font-semibold 
+               group cursor-pointer shadow-lg shadow-blue-500/30'
             >
-              <Button
-                size='lg'
-                className='bg-gradient-to-r from-[#1E90FF] to-[#6FBFFF] 
-                   hover:from-[#1E90FF]/90 hover:to-[#6FBFFF]/90 
-                   text-white px-8 py-4 rounded-full font-semibold 
-                   group cursor-pointer shadow-lg shadow-blue-500/30'
-              >
-                <span className='mr-2'>CHECK PORTFOLIO</span>
-                <motion.span
-                  className='inline-block'
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ repeat: Infinity, duration: 1.5 }}
-                >
-                  <ArrowRight className='w-5 h-5' />
-                </motion.span>
-              </Button>
-            </motion.div>
+              <span className='mr-2'>CHECK PORTFOLIO</span>
+              <span className='inline-block'>
+                <ArrowRight className='w-5 h-5' />
+              </span>
+            </Button>
           </Link>
         </div>
 

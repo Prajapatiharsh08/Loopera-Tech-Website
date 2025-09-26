@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { Button } from "@/components/ui/button"
-import AnimatedBackground from "./animated-background"
-import Link from "next/link"
+import { Button } from '@/components/ui/button'
+import AnimatedBackground from './animated-background'
+import Link from 'next/link'
 
 export default function HeroSection() {
   return (
@@ -12,17 +12,28 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8 animate-fade-in-up">
           {/* Main Header */}
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
-            <span className="block">WE DEVELOP</span>
-            <span className="block bg-gradient-to-r from-[#1E90FF] to-[#00BFFF] bg-clip-text text-transparent">
-              SO YOU LEVEL UP
-            </span>
-          </h1>
+          <div className="space-y-4">
+            {/* First Line */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-3xl sm:text-5xl lg:text-6xl font-bold sm:mr-[60px] lg:mr-[120px]">
+              <span className="text-black">WE</span>
+              <span className="bg-blue-500 text-white px-4 sm:px-6 py-1 sm:py-2 rounded-lg">
+                DEVELOP
+              </span>
+            </div>
+
+            {/* Second Line */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-3xl sm:text-5xl lg:text-6xl font-bold sm:ml-[60px] lg:ml-[120px]">
+              <span className="text-black">SO YOU</span>
+              <span className="bg-blue-500 text-white px-4 sm:px-6 py-1 sm:py-2 rounded-lg">
+                LEVEL UP
+              </span>
+            </div>
+          </div>
 
           {/* Subtitle */}
           <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Custom websites, apps, and AI systems built to launch, automate, and scale your business — beautifully and
-            intelligently.
+            Custom websites, apps, and AI systems built to launch, automate, and
+            scale your business — beautifully and intelligently.
           </p>
 
           {/* CTA Button */}
@@ -30,10 +41,9 @@ export default function HeroSection() {
             <Link href="/consultation">
               <Button
                 size="lg"
-                className="bg-[#1E90FF] hover:bg-[#1E90FF]/90 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 cursor-pointer"
-                style={{ color: "white", backgroundColor: "#1E90FF" }}
+                className="bg-[#1E90FF] hover:bg-[#1E90FF]/90 text-white px-10 sm:px-14 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 cursor-pointer min-w-[260px]"
               >
-                SCHEDULE FREE CONSULTATION
+                Talk To Us
               </Button>
             </Link>
           </div>

@@ -14,7 +14,7 @@ export default function CustomSoftwarePage() {
         <div className="max-w-6xl mx-auto">
           <Link
             href="/services"
-            className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8 transition-colors"
+            className="inline-flex items-center text-[#1E90FF] hover:text-[#1E90FF] mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Services
@@ -22,7 +22,7 @@ export default function CustomSoftwarePage() {
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center bg-orange-50 text-orange-600 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <div className="inline-flex items-center bg-blue-50 text-[#1E90FF] px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Settings className="w-4 h-4 mr-2" />
                 Custom Software Development
               </div>
@@ -33,13 +33,13 @@ export default function CustomSoftwarePage() {
                 Have a unique process or a product idea that doesn't fit the mold? We build backend dashboards, CRMs,
                 portals, and SaaS tools tailored to your exact needs — with AI embedded where it matters.
               </p>
-              <Button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 text-lg">
+              <Button className="bg-blue-600 hover:bg-[#1E90FF] text-white px-8 py-3 text-lg">
                 Build Custom Solution
               </Button>
             </div>
             <div className="relative">
-              <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 h-96 flex items-center justify-center">
-                <Settings className="w-32 h-32 text-orange-600" />
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 h-96 flex items-center justify-center">
+                <Settings className="w-32 h-32 text-[#1E90FF]" />
               </div>
             </div>
           </div>
@@ -53,28 +53,28 @@ export default function CustomSoftwarePage() {
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                icon: <Workflow className="w-8 h-8 text-orange-600" />,
+                icon: <Workflow className="w-8 h-8 text-[#1E90FF]" />,
                 title: "Business Workflow Automation",
                 desc: "Streamline your unique business processes with custom automation tools that integrate with your existing systems.",
               },
               {
-                icon: <BarChart3 className="w-8 h-8 text-orange-600" />,
+                icon: <BarChart3 className="w-8 h-8 text-[#1E90FF]" />,
                 title: "Custom Dashboards",
                 desc: "Real-time analytics and reporting dashboards tailored to your specific KPIs and business metrics.",
               },
               {
-                icon: <Settings className="w-8 h-8 text-orange-600" />,
+                icon: <Settings className="w-8 h-8 text-[#1E90FF]" />,
                 title: "Internal Tools",
                 desc: "Employee portals, inventory management, HR systems, and other internal tools designed for your team.",
               },
               {
-                icon: <Database className="w-8 h-8 text-orange-600" />,
+                icon: <Database className="w-8 h-8 text-[#1E90FF]" />,
                 title: "API Integrations",
                 desc: "Connect your systems with third-party services, legacy software, and modern cloud platforms.",
               },
             ].map((service, index) => (
               <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                <div className="bg-orange-50 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <div className="bg-blue-50 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                   {service.icon}
                 </div>
                 <h3 className="font-semibold text-lg mb-3">{service.title}</h3>
@@ -128,7 +128,7 @@ export default function CustomSoftwarePage() {
                 <ul className="space-y-2">
                   {useCase.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center text-sm text-gray-600">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-[#1E90FF] rounded-full mr-3"></div>
                       {feature}
                     </li>
                   ))}
@@ -193,7 +193,7 @@ export default function CustomSoftwarePage() {
               },
             ].map((process, index) => (
               <div key={index} className="text-center">
-                <div className="bg-orange-100 text-orange-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold">
+                <div className="bg-blue-100 text-[#1E90FF] w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold">
                   {process.step}
                 </div>
                 <h3 className="font-semibold text-lg mb-3">{process.title}</h3>
@@ -213,12 +213,12 @@ export default function CustomSoftwarePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/consultation">
-              <Button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3">Start Custom Project</Button>
+              <Button className="bg-[#1E90FF] hover:bg-[#1E90FF] cursor-pointer text-white px-8 py-3">Start Custom Project</Button>
             </Link>
             <Link href="/portfolio">
               <Button
                 variant="outline"
-                className="border-orange-600 text-orange-600 hover:bg-orange-50 px-8 py-3 bg-transparent"
+                className="border-[#1E90FF] text-[#1E90FF] hover:text-[#1E90FF] cursor-pointer px-8 py-3 bg-transparent"
               >
                 View Case Studies
               </Button>

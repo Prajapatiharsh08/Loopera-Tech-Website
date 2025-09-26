@@ -14,7 +14,7 @@ export default function MobileAppPage() {
         <div className="max-w-6xl mx-auto">
           <Link
             href="/services"
-            className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8 transition-colors"
+            className="inline-flex items-center text-[#1E90FF] hover:text-[#1E90FF] mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Services
@@ -22,7 +22,7 @@ export default function MobileAppPage() {
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center bg-green-50 text-green-600 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <div className="inline-flex items-center bg-blue-50 text-[#1E90FF] px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Smartphone className="w-4 h-4 mr-2" />
                 Mobile App Development
               </div>
@@ -33,11 +33,11 @@ export default function MobileAppPage() {
                 We build cross-platform mobile apps (iOS + Android) that are scalable, fast, and easy to maintain —
                 whether you need a product MVP or a full-fledged app with AI integrations.
               </p>
-              <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 text-lg">Build Your App</Button>
+              <Button className="bg-blue-600 hover:bg-[#1E90FF] cursor-pointer text-white px-8 py-3 text-lg">Build Your App</Button>
             </div>
             <div className="relative">
               <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-8 h-96 flex items-center justify-center">
-                <Smartphone className="w-32 h-32 text-green-600" />
+                <Smartphone className="w-32 h-32 text-[#1E90FF]" />
               </div>
             </div>
           </div>
@@ -105,7 +105,7 @@ export default function MobileAppPage() {
       </section>
 
       {/* App Types Section */}
-      <section className="py-16 bg-gradient-to-r from-green-50 to-blue-50">
+      <section className="py-16 bg-gradient-to-r from-blue-50 to-blue-50">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Types of Apps We Build</h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -137,7 +137,7 @@ export default function MobileAppPage() {
                 <ul className="space-y-2">
                   {appType.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center text-sm text-gray-600">
-                      <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
                       {feature}
                     </li>
                   ))}
@@ -155,23 +155,23 @@ export default function MobileAppPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: <Zap className="w-8 h-8 text-green-600" />,
+                icon: <Zap className="w-8 h-8 text-[#1E90FF]" />,
                 title: "Fast Development",
                 desc: "Cross-platform approach means faster time to market",
               },
               {
-                icon: <Users className="w-8 h-8 text-green-600" />,
+                icon: <Users className="w-8 h-8 text-[#1E90FF]" />,
                 title: "User-Centric Design",
                 desc: "Intuitive interfaces that users love to interact with",
               },
               {
-                icon: <Shield className="w-8 h-8 text-green-600" />,
+                icon: <Shield className="w-8 h-8 text-[#1E90FF]" />,
                 title: "Scalable Architecture",
                 desc: "Built to handle growth from MVP to millions of users",
               },
             ].map((benefit, index) => (
               <div key={index} className="text-center">
-                <div className="bg-green-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   {benefit.icon}
                 </div>
                 <h3 className="font-semibold text-xl mb-3">{benefit.title}</h3>
@@ -191,12 +191,12 @@ export default function MobileAppPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/consultation">
-              <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3">Start App Development</Button>
+              <Button className="bg-[#1E90FF] hover:bg-[#1E90FF] cursor-pointer text-white px-8 py-3">Start App Development</Button>
             </Link>
             <Link href="/portfolio">
               <Button
                 variant="outline"
-                className="border-green-600 text-green-600 hover:bg-green-50 px-8 py-3 bg-transparent"
+                className="border-[#1E90FF] text-[#1E90FF] hover:text-[#1E90FF] cursor-pointer px-8 py-3 "
               >
                 View App Portfolio
               </Button>
