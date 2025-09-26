@@ -7,7 +7,10 @@ export async function POST(req: Request) {
 
     // Validate payload
     if (!url || !path) {
-      return NextResponse.json({ success: false, error: "missing payload" }, { status: 400 });
+      return NextResponse.json(
+        { success: false, error: "missing payload" },
+        { status: 400 }
+      );
     }
 
     // Load environment variables
@@ -19,7 +22,10 @@ export async function POST(req: Request) {
     const RECEIVER_EMAIL = process.env.RECEIVER_EMAIL || SMTP_USER;
 
     if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS) {
-      return NextResponse.json({ success: false, error: "SMTP environment variables missing" }, { status: 500 });
+      return NextResponse.json(
+        { success: false, error: "SMTP environment variables missing" },
+        { status: 500 }
+      );
     }
 
     // Create transporter
@@ -57,6 +63,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ success: true });
   } catch (error: any) {
     console.error("Error sending email:", error);
-    return NextResponse.json({ success: false, error: String(error?.message ?? error) }, { status: 500 });
+    return NextResponse.json(
+      { success: false, error: String(error?.message ?? error) },
+      { status: 500 }
+    );
   }
 }

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
-import VisitorTracker from "./VisitorTracker";
+import VisitorTracker from "../components/VisitorTracker";
 
 const poppins = Poppins({
   subsets: ["latin"],
